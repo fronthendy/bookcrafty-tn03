@@ -85,6 +85,12 @@
                 </div>
                 @endforeach
 
+                @else
+
+                <div class="col-md-12 alert alert-danger">
+                    Nenhum produto para exibir
+                </div>
+
                 @endif
 
             </div>

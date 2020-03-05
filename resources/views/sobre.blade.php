@@ -29,6 +29,15 @@
       tempus. Curabitur non urna erat. In sit amet urna pulvinar lorem semper laoreet. Praesent felis sem,
       pharetra in lacinia at, fringilla in felis. Nullam eleifend et augue nec interdum.<a href="https://unsplash.com">Lorem ipsum</a>, taken by <a href="https://unsplash.com/@joannakosinska">Ipsum
         lorem nidrazis paendrer</a>!</p>
+    <hr>
+
+    @if(isset($livros, $categorias, $editoras))
+    <div class="row">
+      <div class="col-md-4">{{$livros}} Livros </div>
+      <div class="col-md-4">{{$categorias}} Categorias </div>
+      <div class="col-md-4">{{$editoras}} Editoras </div>
+    </div>
+    @endif
   </div>
 </section>
 

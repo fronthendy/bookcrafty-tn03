@@ -12,6 +12,8 @@
         <div class="col">
             <h1>{{ $produto['nome']}}</h1>
             <p>{{ $produto['descricao'] }}</p>
+            <p>Categoria: {{ $nomeCategoria }}</p>
+            <p>Editora: {{ $nomeEditora }}</p>
             <p class="preco">R$ {{ $produto['preco'] }}</p>
             <button class="comprar btn btn-primary">Comprar</button>
         </div>

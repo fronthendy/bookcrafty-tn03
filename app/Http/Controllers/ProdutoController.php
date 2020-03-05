@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Produto;
 use App\Categoria;
+use App\Editora;
 
 class ProdutoController extends Controller
 {
@@ -19,8 +20,10 @@ class ProdutoController extends Controller
     public function show($id_produto)
     {
         $produto = Produto::find($id_produto);
+        $nomeCategoria = Categoria::find($produto->fk_categoria)->nome;
+        $nomeEditora = Editora::find($produto->fk_editora)->nome;
 
-        return view('produto', compact('produto'));
+        return view('produto', compact('produto', 'nomeCategoria', 'nomeEditora'));
     }
 
     public function filtroCategoria($id_categoria)
@@ -30,5 +33,13 @@ class ProdutoController extends Controller
         $nomeCategoria = $categoria->nome;
 
         return view('produtos', compact('produtos', 'nomeCategoria'));
+    }
+
+    public function create()
+    {
+        $editoras = Editora::all();
+        $categorias = Categoria::all();
+
+        return view('cadastroProduto', compact('editoras', 'categorias'));
     }
 }
