@@ -18,3 +18,4 @@ Route::get('/sobre', 'HomeController@sobre');
 
 Route::get('/produtos', 'ProdutoController@index');
 Route::get('/produto/{id}', 'ProdutoController@show');
+Route::get('/produtos/categoria/{id}', 'ProdutoController@filtroCategoria');
